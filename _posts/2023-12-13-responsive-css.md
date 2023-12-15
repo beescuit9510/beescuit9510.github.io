@@ -35,20 +35,7 @@ One thing to realize is that our website is responsive by default. This might so
 For example, if we do not set a `height` or `width` for an element, the `width` and `height` change based on the screen size since block-level elements have `width: 100%` by default. The problem arises when we set fixed widths for both height and width.
 
 ```css
-%%
-  we
-  will
-  have
-  side
-  scrollbar
-  once
-  our
-  screen
-  is
-  smaller
-  than
-  900px
-  %%
+  /* we will have side scrollbar once our screen is smaller than 900px */
   .example {
   width: 900px;
 }
@@ -78,7 +65,7 @@ As mentioned earlier, it is **us** who make our website anti-responsive. So, wha
 	width: 80%;
 }
 .child {
-	%% this will potentially overfill the parent. %%
+	/* this will potentially overfill the parent. */
 	width: 750px;
 }
 ```
@@ -95,7 +82,7 @@ We can simply make use of `percentage`(or [Relative length units](https://www.w3
 
 ```css
 .child {
-	%% percentage is relative to the parent element. %%
+	/* percentage is relative to the parent element. */
 	width: 80%;
 }
 ```
@@ -108,7 +95,7 @@ We can say that `width` is much more manageable than `height`. When we set a `he
 
 ```css
 .container {
-	%% the content might or might not overflow depending on the screen size and content length%%
+	/* the content might or might not overflow depending on the screen size and content length */
 	height: 300px;
 }
 ```
@@ -128,7 +115,7 @@ So, setting a `height` seems like more pain than gain. Once again, our website i
 	font-size: 10px;
 }
 .child {
-	%% 10(parent's font size)*2.5%%
+	/* 10(parent's font size)*2.5 */
 	font-size: 2.5em
 }
 ```
@@ -139,11 +126,11 @@ Ironically, we might want to avoid using `em` for `font-size`.
 
 ```css
 .parent {
-	%% most of browsers default font-size is 16px %%
-	font-size: 2em %% 16*2 %%
+	/* most of browsers default font-size is 16px */
+	font-size: 2em /* 16*2 */
 }
 .child {
-	font-size: 2.5em %% (16*2)*2.5 %%
+	font-size: 2.5em /* (16*2)*2.5 */
 }
 ```
 
@@ -160,7 +147,7 @@ One thing to be aware of is that _when we use `em` with any properties other tha
 ```css
 .btn {
   font-size: 10px;
-  padding: 0.75em 2em; %% 10*.75 10*2%%
+  padding: 0.75em 2em; /* 10*.75 10*2 */
 }
 ```
 
@@ -171,10 +158,10 @@ button {
 	padding: 0.75em 3em;
 }
 .btn-large {
-	font-size: 10px %% padding: 10*0.75 10*3; %%
+	font-size: 10px /* padding: 10*0.75 10*3; */
 }
 .btn-small {
-	font-size: 5px; %% padding: 5*0.75 5*3; %%
+	font-size: 5px; /* padding: 5*0.75 5*3; */
 }
 ```
 
