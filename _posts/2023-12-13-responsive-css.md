@@ -28,7 +28,7 @@ In this article, I want to share some of the lessons and tips that I've learned 
 
 # Our website IS responsive by default
 
-One thing to realize is that our website is responsive by default. This might sound far from the truth. However, _**our website is indeed responsive by default unless we compromise its responsiveness with additional CSS.**_ If we do not have any CSS, our website would look ugly but still be responsive. It is we who cause problems for ourselves.
+One thing to realize is that our website is responsive by default. This might sound far from the truth. However, _**our website is indeed responsive by default unless we ruin its responsiveness with additional CSS.**_ If we do not have any CSS, our website would look ugly but still be responsive. If something is wrong, It is always us.
 
 For example, if we do not set a `height` or `width` for an element, the `width` and `height` change based on the screen size since block-level elements have `width: 100%` by default. The problem arises when we set fixed widths for both height and width.
 
@@ -47,7 +47,7 @@ When we think of responsiveness, `media queries` are the first thing that comes 
 
 As mentioned earlier, it is **us** who make our website anti-responsive. So, what is the most common mistake we make?
 
-**_The most common mistake is setting a `width` or `height` with fixed units_** (or [Absolute Lengths units](https://www.w3schools.com/css/css_units.asp)). When we use fixed units, we end up with a side scrollbar when the screen size is smaller than the fixed size, and overflow occurs when the element cannot fit inside the parent, causing it to overflow beyond its parent.
+**_The most common mistake is setting a `width` or `height` with fixed units_** (or [Absolute Lengths units](https://www.w3schools.com/css/css_units.asp)). When we use fixed units, we end up with a scrollbar when the screen size is smaller than the fixed size, and overflow when the element cannot fit inside the parent.
 
 ```html
 <body>
@@ -70,7 +70,7 @@ As mentioned earlier, it is **us** who make our website anti-responsive. So, wha
 
 ## Why We Should Not Use overflow hidden
 
-Overflow is one of the features that can be frustrating, but it is a part of CSS's nature. CSS does its best to ensure that users do not lose any information, so it chooses overflow instead of hiding the information. This approach helps us avoid potentially creating a bigger problem in the future where we unintentionally lose important information.
+Overflow is one of the frustrating features in CSS, but it is a part of CSS's nature. CSS does its best to ensure that users do not lose any information, so it favors overflow over losing the information. This approach helps us avoid potentially creating a bigger problem in the future where we unintentionally lose important information.
 
 So technically, we can fix overflow with `overflow: hidden;`, but this goes against what CSS intends, potentially causing bigger problems for ourselves in the future.
 
@@ -98,7 +98,7 @@ We can say that `width` is much more manageable than `height`. When we set a `he
 }
 ```
 
-So, setting a `height` seems like more pain than gain. Once again, our website is responsive by default. It is **us** that causes problems for ourselves. So, _**why don't we simply take the height away? The height of the block-level elements grows and shrinks depending on the length of the content by default.**_
+So, setting a `height` seems like more pain than gain. Once again, our website is responsive by default. It is **us** that cause problems for ourselves. So, _**why don't we simply take the height away? The height of the block-level elements grows and shrinks depending on the length of the content by default.**_
 
 # More Relative Units: em and rem
 
