@@ -2,14 +2,14 @@
 title: Responsive CSS
 date: 2023-12-13 12:00:00 -500
 categories: [frontend, css]
-tags: [frontend, css, responsive] # TAG names should always be lowercase
+tags: [frontend, css, responsive] ## TAG names should always be lowercase
 ---
 
 CSS is the most basic skill in web development, but working with it can still be daunting and tricky. I still find myself struggling with CSS at work as well. However, I recently came across [Conquering Responsive Layouts](https://courses.kevinpowell.co/conquering-responsive-layouts) by Kevin Powell, and I've learned so much from the tutorial.
 
 In this article, I want to share some of the lessons and tips that I've learned from the tutorial.
 
-# Table of Contents
+## Table of Contents
 
 - [Our website IS responsive by default](#our-website-is-responsive-by-default)
 - [Percentage for Width](#percentage-for-width)
@@ -26,7 +26,7 @@ In this article, I want to share some of the lessons and tips that I've learned 
   - [Quick Intro to `vh`, `vw`, `vmin`, `vmax`](#quick-intro-to-vh-vw-vmin-vmax)
   - [Usecase](#usecase)
 
-# Our website IS responsive by default
+## Our website IS responsive by default
 
 One thing to realize is that our website is responsive by default. This might sound far from the truth. However, _**our website is indeed responsive by default unless we ruin its responsiveness with additional CSS.**_ If we do not have any CSS, our website would look ugly but still be responsive. If something is wrong, It is always us.
 
@@ -41,9 +41,9 @@ For example, if we do not set a `height` or `width` for an element, the `width` 
 
 When we think of responsiveness, `media queries` are the first thing that comes to mind. However, we know that our website is responsive by default. This means that _our websites can be both good-looking and responsive without the need for `media queries`_ (although we still need media queries, but we can minimize the use).
 
-# Percentage for Width
+## Percentage for Width
 
-## Fixed Units
+### Fixed Units
 
 As mentioned earlier, it is **us** who make our website anti-responsive. So, what is the most common mistake we make?
 
@@ -68,7 +68,7 @@ As mentioned earlier, it is **us** who make our website anti-responsive. So, wha
 }
 ```
 
-## Why We Should Not Use overflow hidden
+### Why We Should Not Use overflow hidden
 
 Overflow is one of the frustrating features in CSS, but it is a part of CSS's nature. CSS does its best to ensure that users do not lose any information, so it favors overflow over losing the information. This approach helps us avoid potentially creating a bigger problem in the future where we unintentionally lose important information.
 
@@ -85,7 +85,7 @@ We can simply make use of `percentage`(or [Relative length units](https://www.w3
 }
 ```
 
-# Avoiding Height
+## Avoiding Height
 
 Now, we understand how to deal with `width`. But what about `height`?
 
@@ -100,11 +100,11 @@ We can say that `width` is much more manageable than `height`. When we set a `he
 
 So, setting a `height` seems like more pain than gain. Once again, our website is responsive by default. It is **us** that cause problems for ourselves. So, _**why don't we simply take the height away? The height of the block-level elements grows and shrinks depending on the length of the content by default.**_
 
-# More Relative Units: em and rem
+## More Relative Units: em and rem
 
 `Percentage` is very useful when it comes to `width`. What about other relative units?
 
-## em
+### em
 
 `em` is relative to the element's parent's font size.
 
@@ -132,11 +132,11 @@ Ironically, we might want to avoid using `em` for `font-size`.
 }
 ```
 
-## rem
+### rem
 
 `rem` can help us with this compounding problem. The **_r_** in `rem` stands for root. As the name suggests, `rem` is relative to the font size of the root element(`<html>`). thus, consistent!
 
-## rem and em for Width, Height, Padding, Margin, and More
+### rem and em for Width, Height, Padding, Margin, and More
 
 We can use `rem` and `em` not only for `font-size` but also for `width`, `height`, `padding`, `margin`, or any properties that take units.
 
@@ -163,7 +163,7 @@ button {
 }
 ```
 
-## em and rem with Media Queries
+### em and rem with Media Queries
 
 When we use `rem` and `em` for `width`, `height`, `padding`, `margin`, and other properties, they naturally adjust when font-size changes. This can be very useful with `media queries`, allowing us to adjust multiple parts of the entire site very easily.
 
@@ -179,22 +179,22 @@ html {
 }
 ```
 
-## When to Use Which One
+### When to Use Which One
 
 Simple! **_For consistent spacing based on the root element, use `rem`. For spacing based on `font-size` of an element, use `em`._**
 
-# More Relative Units: vh, vw, vmin, vmax
+## More Relative Units: vh, vw, vmin, vmax
 
 Another set of useful relative units is `vh`, `vw`, `vmin`, and `vmax`. Here, _v_ stands for viewport, and as their names suggest, they are all relative to the viewport. We can think of the viewport as _the area of the web page that is visible to the user in their browser window._
 
-## Quick Intro to vh, vw, vmin, vmax
+### Quick Intro to vh, vw, vmin, vmax
 
 - `vh` is relative to the height of viewport
 - `vw` is relative to the width of viewport
 - `vmin` is relative to the min of `vw` and `vh`
 - `vmax` is relative to the max of `vw` and `vh`
 
-## Usecase
+### Usecase
 
 They are not as often used as `percentage`. but, they can still come in handy, one of the known example is **_setting `font-size` with `vmin` or `vw` unit for titles_**
 
